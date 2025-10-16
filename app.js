@@ -1,4 +1,4 @@
-let listaDeNumerosSoryeados = [];
+let listaDeNumerosSorteados = [];
 let numeroLImite = 10;
 let numeroSeceto = gararNumeroAleatorio();
 let tentativas = 1;
@@ -6,6 +6,7 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female')
 }
 
 function exibirMensagemInicial() {
