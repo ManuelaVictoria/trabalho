@@ -1,15 +1,21 @@
-let listaDeNumerosSorteados = [];
-let numeroLImite = 10;
-let numeroSeceto = gararNumeroAleatorio();
-let tentativas = 1;
+let numeroSecreto = gerarNumeroAleatorio();
 
-function exibirTextoNaTela(tag, texto) {
+function exibirTextoNaTela(tag, texo) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
-function exibirMensagemInicial() {
-    exibirTextoNaTela ('h1','Jogo do número secreto');
-    exibirTextoNaTela('p','Escolha um nuḿero entre 1 e 10');
+exibirTextoNaTela('h1', 'Jogo do número secreto');
+exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+
+function verificarChute() {
+    let chute = document.queryselector ('input').value;
+
+    if (chute == numeroSecreto) {
+        exibirTextoNaTela('h1','Acertou!')
+    }
+}
+
+function gerarNumeroAleatorio(){
+    return parseInt(Math.random() * 10 + 1;)
 }
